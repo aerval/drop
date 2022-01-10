@@ -1,6 +1,8 @@
 Bootstrap: docker
-From: busybox
+From: continuumio/miniconda3
 
 %post
+    /opt/conda/bin/conda install -c conda-forge -c bioconda drop
 
-echo "this is a tiny example container."
+%runscript
+    exec /opt/conda/bin/"$@"
