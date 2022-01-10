@@ -2,6 +2,7 @@ Bootstrap: docker
 From: continuumio/miniconda3
 
 %post
+    # install as per gagneurlab/drop
     /opt/conda/bin/conda install -y -c conda-forge -c bioconda drop
 
 %runscript
