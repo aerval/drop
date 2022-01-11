@@ -1,10 +1,10 @@
-Bootstrap: docker
-From: continuumio/miniconda3
+Bootstrap: library
+From: nadjakry/default/miniconda:4.8.2
 
 %post
     # install as per gagneurlab/drop
-    /opt/conda/bin/conda install -y -c conda-forge -c bioconda drop
+    /miniconda/bin/conda install -y -c conda-forge -c bioconda drop
 
 %runscript
     # run scripts directly from conda env
-    exec /opt/conda/bin/"$@"
+    exec /miniconda/bin/"$@"
